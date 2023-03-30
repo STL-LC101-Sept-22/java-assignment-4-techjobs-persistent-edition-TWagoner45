@@ -1,4 +1,9 @@
 -- Part 1: Test it with SQL
+CREATE TABLE job (
+    employer VARCHAR
+    job VARCHAR
+    skill VARCHAR
+);
 
 -- Part 2: Test it with SQL
 
