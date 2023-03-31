@@ -2,7 +2,7 @@ package org.launchcode.techjobs.persistent.controllers;
 
 import org.launchcode.techjobs.persistent.models.Skill;
 import org.launchcode.techjobs.persistent.models.data.SkillRepository;
-import org.launchcode.techjobs.persistent.models.data.SkillRepositoryRepository;
+//import org.launchcode.techjobs.persistent.models.data.SkillRepositoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
@@ -18,7 +18,7 @@ public class SkillController {
     @Autowired
     private SkillRepository skillRepository;
 
-    @GetMapping()
+    @GetMapping("")
     public String index(Model model) {
         model.addAttribute("title", "All Skills");
         model.addAttribute("skills", skillRepository.findAll());
@@ -46,9 +46,9 @@ public class SkillController {
     @GetMapping("view/{skillId}")
     public String displayViewSkill(Model model, @PathVariable int skillId) {
 
-        Optional optSkill = skillRepository.findByID(skillId);
+        Optional optSkill = skillRepository.findById(skillId);
         if (optSkill.isPresent()) {
-            Skill employer = (Skill) optSkill.get();
+            Skill skill = (Skill) optSkill.get();
             model.addAttribute("skill", skill);
             return "skills/view";
         } else {
@@ -57,5 +57,3 @@ public class SkillController {
     }
 }
 
-
-}

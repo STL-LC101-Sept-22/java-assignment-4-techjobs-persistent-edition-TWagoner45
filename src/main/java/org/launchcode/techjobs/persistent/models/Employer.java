@@ -2,6 +2,7 @@ package org.launchcode.techjobs.persistent.models;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 
+import javax.persistence.Entity;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
@@ -14,4 +15,12 @@ public class Employer extends AbstractEntity {
     public Employer() {};
 
 
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
 }

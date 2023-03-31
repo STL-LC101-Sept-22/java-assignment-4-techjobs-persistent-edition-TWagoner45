@@ -6,6 +6,9 @@ CREATE TABLE job (
 );
 
 -- Part 2: Test it with SQL
+SELECT employer
+FROM job
+WHERE employer = St. Louis City
 
 -- Part 3: Test it with SQL
 
