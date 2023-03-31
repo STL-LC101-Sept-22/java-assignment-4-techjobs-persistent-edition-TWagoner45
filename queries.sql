@@ -11,7 +11,9 @@ FROM job
 WHERE employer = St. Louis City
 
 -- Part 3: Test it with SQL
-DELETE FROM employer WHERE
-
+DROP TABLE job
 
 -- Part 4: Test it with SQL
+SELECT skill
+FROM job
+ORDER BY skill ASC AND job IS NOT NULL;
