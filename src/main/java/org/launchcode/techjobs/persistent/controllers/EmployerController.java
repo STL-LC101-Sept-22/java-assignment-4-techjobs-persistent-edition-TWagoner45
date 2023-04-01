@@ -20,7 +20,7 @@ public class EmployerController {
 
     @RequestMapping("")
     public String index(Model model) {
-        //model.addAttribute("title", "All Employers");
+        model.addAttribute("title", "All Employers");
         model.addAttribute("employers", employerRepository.findAll());
         return "employers/index";
     }
@@ -40,6 +40,7 @@ public class EmployerController {
         }
 
         employerRepository.save(newEmployer);
+        model.addAttribute("employers", employerRepository.findAll());
         return "redirect:";
     }
 
